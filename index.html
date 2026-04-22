@@ -3,197 +3,176 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bariloche Freeride</title>
+<title>Freeride Bariloche</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600;900&display=swap" rel="stylesheet">
 
 <style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 
 body {
+  margin: 0;
   font-family: 'Montserrat', sans-serif;
-  background: #0a0a0a;
+  background: #000;
   color: white;
-}
-
-/* NAV */
-nav {
-  position: fixed;
-  width: 100%;
-  padding: 15px 20px;
-  display: flex;
-  justify-content: space-between;
-  z-index: 1000;
-  background: rgba(0,0,0,0.4);
-  backdrop-filter: blur(10px);
-}
-
-nav h1 {
-  font-size: 1.2em;
-}
-
-nav a {
-  color: white;
-  text-decoration: none;
-  font-size: 0.9em;
 }
 
 /* HERO */
 .hero {
   height: 100vh;
-  background: url('https://images.unsplash.com/photo-1519681393784-d120267933ba') center/cover no-repeat;
+  background: url('foto1.jpg') center/cover no-repeat;
   display: flex;
   align-items: flex-end;
-  padding: 40px 20px;
+  padding: 30px;
+  position: relative;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, black, transparent);
 }
 
 .hero-content {
-  max-width: 600px;
+  position: relative;
+  z-index: 2;
 }
 
-.hero h2 {
-  font-size: 2.8em;
+.hero h1 {
+  font-size: 3em;
   font-weight: 900;
+  letter-spacing: 2px;
 }
 
 .hero p {
-  margin: 15px 0;
   opacity: 0.8;
 }
 
+/* BOTONES */
 .btn {
-  display: inline-block;
-  background: #ff3c00;
-  padding: 12px 22px;
+  background: #ff2d00;
+  padding: 14px 24px;
   border-radius: 30px;
   color: white;
   text-decoration: none;
+  display: inline-block;
+  margin-top: 15px;
   font-weight: 600;
 }
 
-/* SECTIONS */
-section {
-  padding: 60px 20px;
+/* SECCIONES */
+.section {
+  padding: 80px 20px;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 1s ease;
 }
 
-/* CARDS */
-.cards {
+.section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* GALERIA */
+.gallery {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 20px;
 }
 
-.card {
-  background: #111;
-  padding: 25px;
-  border-radius: 15px;
-  transition: 0.3s;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-}
-
-/* VIDEO */
-.video iframe {
+.gallery img {
   width: 100%;
-  height: 250px;
-  border-radius: 10px;
+  height: 300px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
 }
 
-/* CTA */
-.cta {
-  text-align: center;
+.gallery img:hover {
+  transform: scale(1.1);
 }
 
-.cta h2 {
-  font-size: 2em;
-  margin-bottom: 20px;
-}
-
-/* FOOTER */
-footer {
-  padding: 30px;
-  text-align: center;
-  font-size: 0.8em;
-  opacity: 0.6;
+/* BOTÓN WHATSAPP FLOTANTE */
+.whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25D366;
+  color: white;
+  font-size: 24px;
+  padding: 15px 18px;
+  border-radius: 50%;
+  text-decoration: none;
+  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+  z-index: 999;
 }
 
 /* DESKTOP */
 @media (min-width: 768px) {
+  .gallery {
+    grid-template-columns: repeat(3, 1fr);
+  }
 
-.hero {
-  align-items: center;
+  .gallery img {
+    height: 420px;
+  }
+
+  .hero h1 {
+    font-size: 4em;
+  }
 }
 
-.hero h2 {
-  font-size: 4em;
-}
-
-.cards {
-  grid-template-columns: repeat(3, 1fr);
-}
-
-.video iframe {
-  height: 400px;
-}
-
-}
 </style>
-
 </head>
 
 <body>
 
-<nav>
-  <h1>FREERIDE BRC</h1>
-  <a href="https://instagram.com/TUUSUARIO">Instagram</a>
-</nav>
-
+<!-- HERO -->
 <div class="hero">
   <div class="hero-content">
-    <h2>NO VENGAS A MIRAR</h2>
-    <h2>VENÍ A VIVIRLO</h2>
-    <p>Experiencias reales en Bariloche. Bike, snow y aventura.</p>
-    <a class="btn" href="https://wa.me/TUNUMERO">Reservar ahora</a>
+    <h1>BARILOCHE FREERIDE</h1>
+    <p>Adrenalina. Montaña. Real.</p>
+    <a class="btn" href="https://wa.me/549XXXXXXXXXX">Reservar ahora</a>
   </div>
 </div>
 
-<section>
-  <h2>Experiencias</h2>
-  <div class="cards">
-    <div class="card">
-      <h3>Bike</h3>
-      <p>Senderos escondidos, bajadas técnicas y vistas únicas.</p>
-    </div>
-    <div class="card">
-      <h3>Snow</h3>
-      <p>Freeride en nieve polvo lejos de las pistas.</p>
-    </div>
-    <div class="card">
-      <h3>Sunsets</h3>
-      <p>Atardeceres que no vas a olvidar nunca.</p>
-    </div>
-  </div>
-</section>
+<!-- FRASE -->
+<div class="section">
+  <h2>No es turismo. Es experiencia.</h2>
+</div>
 
-<section class="video">
-  <h2>Sentilo</h2>
-  <iframe src="https://www.youtube.com/embed/Scxs7L0vhZ4" allowfullscreen></iframe>
-</section>
+<!-- GALERIA -->
+<div class="gallery">
+  <img src="foto1.jpg">
+  <img src="foto2.jpg">
+  <img src="foto3.jpg">
+  <img src="foto4.jpg">
+  <img src="foto5.jpg">
+  <img src="foto6.jpg">
+</div>
 
-<section class="cta">
-  <h2>¿Listo para vivir Bariloche?</h2>
-  <a class="btn" href="https://wa.me/TUNUMERO">Escribinos</a>
-</section>
+<!-- CTA -->
+<div class="section">
+  <h2>¿Listo para vivirlo?</h2>
+  <a class="btn" href="https://instagram.com/@bariloche_voy">Ver Instagram</a>
+</div>
 
-<footer>
-  © 2026 Freeride Bariloche
-</footer>
+<!-- BOTÓN WHATSAPP -->
+<a class="whatsapp" href="https://wa.me/5492944204802" target="_blank">
+  💬
+</a>
+
+<script>
+const sections = document.querySelectorAll('.section');
+
+window.addEventListener('scroll', () => {
+  sections.forEach(sec => {
+    const top = sec.getBoundingClientRect().top;
+    if(top < window.innerHeight - 100){
+      sec.classList.add('visible');
+    }
+  });
+});
+</script>
 
 </body>
 </html>
